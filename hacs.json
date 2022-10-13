@@ -1,0 +1,6 @@
+{
+  "name": "autarco",
+  "content_in_root": false,
+  "render_readme": true,
+  "iot_class": "Local Pull"
+}

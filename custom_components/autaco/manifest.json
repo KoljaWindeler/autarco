@@ -1,0 +1,18 @@
+{
+  "domain": "autarco",
+  "name": "autarco",
+  "documentation": "https://github.com/KoljaWindeler/autarco/blob/master/README.md",
+  "issue_tracker": "https://github.com/KoljaWindeler/autarco/issues",
+  "config_flow": true,
+  "version": "0.5.0",
+  "requirements": [
+    "tzlocal",
+    "integrationhelper",
+    "voluptuous",
+    "python-dateutil>2.7.3"
+  ],
+  "dependencies": [],
+  "codeowners": [
+    "@KoljaWindeler"
+  ]
+}

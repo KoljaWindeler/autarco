@@ -1,0 +1,37 @@
+{
+    "config": {
+        "title": "AUTARCO - Solar inverter",
+        "step": {
+            "user": {
+                "title": "AUTARCO",
+                "description": "Enter the sensor name and configure sensor parameters. More info on https://github.com/koljawindeler/AUTARCO#configuration-options.",
+                "data": {
+                    "name": "Friendly name (can be changed later on)",
+                    "url": "The ip of the Inverter, e.g. 192.168.2.194",
+                    "icon": "Icon  (see https://materialdesignicons.com/).",
+                    "interval": "Sec between two updates, default: 20"
+                }
+            }
+        },
+        "error": {
+            "url_error": "The URL is not valid, could not download data."
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "AUTARCO",
+                "description": "Enter the sensor name and configure sensor parameters. More info on https://github.com/koljawindeler/AUTARCO#configuration-options.",
+                "data": {
+                    "name": "Friendly name (can be changed later on)",
+                    "url": "The ip of the Inverter, e.g. 192.168.2.194",
+                    "icon": "Icon  (see https://materialdesignicons.com/).",
+                    "interval": "Sec between two updates, default: 20"
+                }
+            }
+        },
+        "error": {
+            "url_error": "The URL is not valid, could not download data."
+        }
+    }
+}
