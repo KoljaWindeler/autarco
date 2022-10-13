@@ -27,7 +27,8 @@ CONF_INTERVAL = "interval"
 
 
 # defaults
-DEFAULT_ICON = 'mdi:weather-sunny'
+DEFAULT_ICON = "mdi:weather-sunny"
+DEFAULT_URL = "192.168.2.229"
 DEFAULT_NAME = "autarco"
 DEFAULT_INTERVAL = "20"
 
@@ -63,8 +64,8 @@ async def async_check_data(hass, user_input):
 def ensure_config(user_input):
 	"""Make sure that needed Parameter exist and are filled with default if not."""
 	out = {}
-	out[CONF_NAME] = ""
-	out[CONF_AUTARCO_URL] = ""
+	out[CONF_NAME] = DEFAULT_NAME
+	out[CONF_AUTARCO_URL] = DEFAULT_URL
 	out[CONF_ICON] = DEFAULT_ICON
 	out[CONF_INTERVAL] = DEFAULT_INTERVAL
 
