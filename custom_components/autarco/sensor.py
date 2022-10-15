@@ -142,10 +142,11 @@ class autarco_power_sensor(Entity):
 					self.autarco['extra']['max_power'] = self.autarco['power']
 
 				# only update dependnant sensor if we get info
-				self.hass.data[DOMAIN][self._unique_id]['temp'] = float(ds[3])
-				self.hass.data[DOMAIN][self._unique_id]['kwh_total'] = float(ds[6])
-				await self.hass.data[DOMAIN][self._unique_id]['temp_sensor'].async_update()
-				await self.hass.data[DOMAIN][self._unique_id]['kwh_total_sensor'].async_update()
+				if(float(ds[3])>5):
+					self.hass.data[DOMAIN][self._unique_id]['temp'] = float(ds[3])
+					self.hass.data[DOMAIN][self._unique_id]['kwh_total'] = float(ds[6])
+					await self.hass.data[DOMAIN][self._unique_id]['temp_sensor'].async_update()
+					await self.hass.data[DOMAIN][self._unique_id]['kwh_total_sensor'].async_update()
 		except requests.exceptions.Timeout:
 			self.autarco['power'] = 0
 			if(now.day != self._lastUpdate.day):
