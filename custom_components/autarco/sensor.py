@@ -146,17 +146,11 @@ class autarco_power_sensor(Entity):
 				self.hass.data[DOMAIN][self._unique_id]['kwh_total'] = float(ds[6])
 				await self.hass.data[DOMAIN][self._unique_id]['temp_sensor'].async_update()
 				await self.hass.data[DOMAIN][self._unique_id]['kwh_total_sensor'].async_update()
-			else:
-				self.autarco['power'] = 0
-				if(now.day != self._lastUpdate.day):
-					self.autarco['extra']['kwh_today'] = 0
-				self.autarco['extra']['alterts'] = "offline"
-
-
-
 		except requests.exceptions.Timeout:
-			pass
-			#print("timeout exception on autarco integration")
+			self.autarco['power'] = 0
+			if(now.day != self._lastUpdate.day):
+				self.autarco['extra']['kwh_today'] = 0
+			self.autarco['extra']['alerts'] = "offline"
 		except Exception:
 			self.exc()
 
