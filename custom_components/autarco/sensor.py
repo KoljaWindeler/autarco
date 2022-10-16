@@ -68,8 +68,6 @@ class autarco_power_sensor(Entity):
 				'firmware_version': "loading",
 				'inverter_model': "loading",
 				'serial_number': "loading",
-				'temp': 0,
-				'kwh_total': 0,
 				'kwh_today': 0,
 				'max_power': 0,
 				'alerts': "loading",
@@ -211,7 +209,10 @@ class autarco_temp_sensor(Entity):
 	@property
 	def state(self):
 		"""Return the state of the sensor."""
-		return self._state
+		if(self._state>10):
+			return self._state
+		else:
+			return None
 
 	@property
 	def icon(self):
@@ -263,7 +264,10 @@ class autarco_kwh_total_sensor(Entity):
 	@property
 	def state(self):
 		"""Return the state of the sensor."""
-		return self._state
+		if(self._state>10):
+			return self._state
+		else:
+			return None
 
 	@property
 	def icon(self):
